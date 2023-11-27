@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Bookings</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Add Customer Booking</h2>
+
+        <!-- Error Message Display -->
+        {% if error_message %}
+            <div class="alert alert-danger">
+                {{ error_message }}
+            </div>
+        {% endif %}
+
+        <form action="/CustomerBookings" method="post">
+            <div class="form-group">
+                <label for="guest_name">Guest Name:</label>
+                <input type="text" class="form-control" id="guest_name" name="guest_name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="room_number">Room Number:</label>
+                <input type="number" class="form-control" id="room_number" name="room_number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="check_in">Check-In:</label>
+                <input type="datetime-local" class="form-control" id="check_in" name="check_in" required>
+            </div>
+
+            <div class="form-group">
+                <label for="check_out">Check-Out:</label>
+                <input type="datetime-local" class="form-control" id="check_out" name="check_out" required>
+            </div>
+
+            <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="housekeeping" name="housekeeping">
+                <label class="form-check-label" for="housekeeping">Housekeeping</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit Booking</button>
+        </form>
+    </div>
+
+    <!-- Including Bootstrap JS (Optional but often useful) -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.9/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>

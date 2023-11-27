@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bookings</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-4">Hotel Bookings</h1>
+        
+        <!-- Home Button -->
+        <a href="/" class="btn btn-primary mb-3">Home</a>
+
+        <!-- Table to display bookings -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Guest Name</th>
+                    <th>Room Number</th>
+                    <th>Check-In</th>
+                    <th>Check-Out</th>
+                    <th>Housekeeping</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for booking in bookings %}
+                <tr>
+                    <td>{{ booking.guest_name }}</td>
+                    <td>{{ booking.room_number }}</td>
+                    <td>{{ booking.check_in.strftime('%Y-%m-%d %H:%M') }}</td>
+                    <td>{{ booking.check_out.strftime('%Y-%m-%d %H:%M') }}</td>
+                    <td>{{ booking.housekeeping }}</td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="5">No bookings found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.9/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
