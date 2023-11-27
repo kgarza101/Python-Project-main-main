@@ -19,8 +19,8 @@ class CustomerBooking(db.Model):
     def __repr__(self):
         return '<CustomerBooking %r>' % self.guest_name
 
-USERNAME = 'erik'
-PASSWORD = '101'
+USERNAME = 'Admin'
+PASSWORD = 'password123'
 
 def login_required(f):
     @wraps(f)
